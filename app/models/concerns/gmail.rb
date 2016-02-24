@@ -11,7 +11,7 @@ module Gmail
       body_attr_name = 'BODY[TEXT]'
 
       imap = Net::IMAP.new('imap.gmail.com', 993, true)
-      imap.login(self.email, self.app_password)
+      imap.login(self.email, '')
       imap.select('INBOX')
 
       imap.search(['UNSEEN']).each do |msg_id|
